@@ -4,14 +4,15 @@ const myApi = axios.create({
     baseURL: "https://ncnews.onrender.com/api"
 });
 
-export const fetchAPI = () => {
-    return myApi.get("/").then((response) => {
+export const fetchArticles = () => {
+    return myApi.get('https://ncnews.onrender.com/api/articles')
+    .then((response) => {
         return response.data
     })
 }
 
-export const fetchArticles = () => {
-    return myApi.get('https://ncnews.onrender.com/api/articles')
+export const fetchArticleID = (article_id) => {
+    return myApi.get(`/articles/${article_id}`)
     .then((response) => {
         return response.data
     })
