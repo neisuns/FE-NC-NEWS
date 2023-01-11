@@ -8,7 +8,7 @@ const ArticleCard = ({ article }) => {
     return (<BrowserRouter>
         <section className="ArticleCard">
             <Link to={`/articles/${article.article_id}`}>
-                <h1>{article.title}</h1>
+                <h3>{article.title}</h3>
             </Link>
             <div className="Article">
                 <p>Topic: {myTopic}</p>

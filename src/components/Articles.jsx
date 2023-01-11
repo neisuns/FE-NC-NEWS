@@ -26,7 +26,7 @@ export const Articles = () => {
     } 
     return (
         <div>
-            <h1>Articles</h1>
+            <h2>Articles</h2>
             <ul>
             {articles.map(article => (
                 <li key={article.article_id}>
