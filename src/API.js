@@ -17,3 +17,10 @@ export const fetchArticleID = (article_id) => {
         return response.data
     })
 }
+
+export const patchVotes = (article_id) => {
+    return myApi.get(`/articles/${article_id}`, {inc_vote: 1})
+    .then((response) => {
+        return response.data
+    })
+}

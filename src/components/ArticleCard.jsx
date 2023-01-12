@@ -1,4 +1,6 @@
 import {Link} from "react-router-dom"
+import { useState } from "react"
+import patchVotes from "../API"
 
 const ArticleCard = ({ article }) => {
     const {author, created_at, title, topic, article_id } = article;
