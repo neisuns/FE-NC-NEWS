@@ -8,24 +8,39 @@ h1 {
 }
 
 h2 {
+  font-weight: bold;
   font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 h3 {
-  font-style: italic;
+  font-weight: bold;
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 
-.Navigator {
-  display:flex
+.nav {
+  display:flex;
+  float: center
 }
-
+.navLink{
+  color: grey
+}
 .ArticleCard {
   margin-left:auto;
-  margin-right: auto;
-  margin-bottom: auto;
-  border-width: auto;
-  border-style: double;
+  margin-right: 50px;
+  margin-bottom: 50px;
+  border-width: 50px;
+  border-style:ridge;
+  display: flexbox;
+}
 
+.Articles {
+  display:grid;
+  grid-template-columns: auto auto auto;
+  width: 100px;
+}
 
+.SingleArticle h2 {
+  text-align: left;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-weight: bold;
 }
