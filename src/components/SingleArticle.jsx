@@ -7,16 +7,15 @@ import CommentCard from "./CommentCard";
 const SingleArticle = () => {
     const { article_id } = useParams();
     const [article, setArticle] = useState({});
-    const [comments, setComments] = useState({});
+    const [comments, setComments] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [isError, setIsError] = useState(false);
     useEffect(() => {
         setIsLoading(true);
-        fetchArticleID(article_id).then((articleInfo) => {
-            setArticle(articleInfo.article);
-            setIsLoading(false);
-        });
-        fetchCommentsViaArticleID(article_id).then((commentInfo) => {
+
+        Promise.all([fetchArticleID(article_id), fetchCommentsViaArticleID(article_id)])
+        .then(([articleInfo, commentInfo]) => {
+            setArticle(articleInfo.article)
             setComments(commentInfo.comments)
             setIsLoading(false)
         })
@@ -44,8 +43,8 @@ const SingleArticle = () => {
                 <h3>Comments</h3>
                   {comments.map(comment => {
                     return (
-                    <li key={`comment${comment.comments_count}`}>
-                        <CommentCard comment={comment}/>
+                    <li key={comment.comment_id}>
+                        <CommentCard comment = {comment}/>
                     </li>
                     );
                   })
