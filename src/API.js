@@ -17,3 +17,10 @@ export const fetchArticleID = (article_id) => {
         return response.data
     })
 }
+
+export const fetchCommentsViaArticleID = (article_id) => {
+    return myApi.get(`/articles/${article_id}/comments`)
+    .then((response) => {
+        return response.data
+    })
+}
